@@ -5,11 +5,17 @@
             <img src="{{ asset('images/logo.png') }}" alt="Sucofindo">
         </div>
         <button class="sidebar-toggle" onclick="toggleSidebar()" title="Toggle sidebar">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+            <svg class="sidebar-toggle-desktop-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
                  stroke-linecap="round" stroke-linejoin="round">
                 <line x1="3" y1="6"  x2="21" y2="6"/>
                 <line x1="3" y1="12" x2="21" y2="12"/>
                 <line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+            <svg class="sidebar-toggle-mobile-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"
+                 aria-hidden="true">
+                <circle cx="12" cy="5" r="2"/>
+                <circle cx="12" cy="12" r="2"/>
+                <circle cx="12" cy="19" r="2"/>
             </svg>
         </button>
     </div>
@@ -32,7 +38,9 @@
         <hr class="nav-divider">
 
         {{-- Data Stock --}}
-        <a href="{{ route('data-stok.index') }}" class="nav-item {{ request()->routeIs('data-stok') ? 'active' : '' }}" data-tip="Data Stock">
+        <a href="{{ route('data-stok.index') }}"
+            class="nav-item {{ request()->routeIs('data-stok.*') ? 'active' : '' }}"
+            data-tip="Data Stock">
             <span class="nav-icon">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                      stroke-linecap="round" stroke-linejoin="round">
@@ -43,7 +51,7 @@
         </a>
 
         {{-- Barang Masuk --}}
-        <a href="{{ route('barang-masuk.index') }}" class="nav-item {{ request()->routeIs('barang-masuk') ? 'active' : '' }}" data-tip="Barang Masuk">
+        <a href="{{ route('barang-masuk.index') }}" class="nav-item {{ request()->routeIs('barang-masuk.*') ? 'active' : '' }}" data-tip="Barang Masuk">
             <span class="nav-icon">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                      stroke-linecap="round" stroke-linejoin="round">
@@ -56,7 +64,7 @@
         </a>
 
         {{-- Barang Keluar --}}
-        <a href="{{ route('barang-keluar.index') }}" class="nav-item {{ request()->routeIs('barang-keluar') ? 'active' : '' }}" data-tip="Barang Keluar">
+        <a href="{{ route('barang-keluar.index') }}" class="nav-item {{ request()->routeIs('barang-keluar.*') ? 'active' : '' }}" data-tip="Barang Keluar">
             <span class="nav-icon">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                      stroke-linecap="round" stroke-linejoin="round">

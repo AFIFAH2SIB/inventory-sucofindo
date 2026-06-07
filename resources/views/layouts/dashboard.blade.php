@@ -66,6 +66,11 @@
 
     /* Sidebar toggle */
     function toggleSidebar() {
+        if (window.matchMedia('(max-width: 900px)').matches) {
+            document.body.classList.toggle('sidebar-mobile-open');
+            return;
+        }
+
         document.body.classList.toggle('sidebar-collapsed');
         localStorage.setItem('sidebarCollapsed', document.body.classList.contains('sidebar-collapsed'));
     }
@@ -78,9 +83,16 @@
 
     /* Restore sidebar state */
     document.addEventListener('DOMContentLoaded', function () {
-        if (localStorage.getItem('sidebarCollapsed') === 'true') {
+        if (!window.matchMedia('(max-width: 900px)').matches && localStorage.getItem('sidebarCollapsed') === 'true') {
             document.body.classList.add('sidebar-collapsed');
         }
+
+        window.addEventListener('resize', function () {
+            if (!window.matchMedia('(max-width: 900px)').matches) {
+                document.body.classList.remove('sidebar-mobile-open');
+            }
+        });
+
         /* Auto-open submenu if a child is active */
         document.querySelectorAll('.nav-submenu a.active').forEach(function (a) {
             const submenu = a.closest('.nav-submenu');

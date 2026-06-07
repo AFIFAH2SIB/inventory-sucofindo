@@ -1,0 +1,161 @@
+/* ============================================================
+   Manajemen User — Badge Role
+   ============================================================ */
+.badge-role {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: .75rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.badge-admin      { background: rgba(99,102,241,.2);  color: #818cf8; }
+.badge-supervisor { background: rgba(245,158,11,.15); color: #f59e0b; }
+
+/* ============================================================
+   Modal — Overlay
+   ============================================================ */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ============================================================
+   Modal — Box
+   ============================================================ */
+.modal-box {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 480px;
+    box-shadow: 0 20px 60px rgba(15,23,42,.18), 0 4px 16px rgba(15,23,42,.08);
+    animation: modalIn .22s cubic-bezier(.4,0,.2,1);
+}
+
+@keyframes modalIn {
+    from { opacity: 0; transform: translateY(-18px) scale(.98); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ============================================================
+   Modal — Header
+   ============================================================ */
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px 16px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.modal-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0;
+    letter-spacing: -.01em;
+}
+
+.modal-close {
+    background: #f1f5f9;
+    border: none;
+    color: #64748b;
+    font-size: 1.1rem;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background .15s, color .15s;
+}
+.modal-close:hover { background: #e2e8f0; color: #0f172a; }
+
+/* ============================================================
+   Modal — Body & Form
+   ============================================================ */
+.modal-body   { padding: 20px 24px; }
+.form-group   { margin-bottom: 16px; }
+
+.form-label {
+    display: block;
+    font-size: .8rem;
+    color: #475569;
+    margin-bottom: 6px;
+    font-weight: 600;
+    letter-spacing: .01em;
+}
+.form-label .required { color: #ef4444; }
+
+.form-input {
+    width: 100%;
+    background: #f8fafc;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 9px;
+    padding: 9px 13px;
+    color: #0f172a;
+    font-size: .875rem;
+    transition: border-color .18s, box-shadow .18s, background .18s;
+    box-sizing: border-box;
+}
+.form-input::placeholder { color: #94a3b8; }
+.form-input:focus {
+    outline: none;
+    border-color: #6366f1;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(99,102,241,.12);
+}
+select.form-input         { cursor: pointer; }
+select.form-input option  { background: #fff; color: #0f172a; }
+
+/* ============================================================
+   Modal — Footer & Buttons
+   ============================================================ */
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 16px 24px 20px;
+    border-top: 1px solid #f1f5f9;
+}
+
+.btn-cancel {
+    background: #f1f5f9;
+    border: 1.5px solid #e2e8f0;
+    color: #475569;
+    padding: 8px 20px;
+    border-radius: 9px;
+    font-size: .85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .15s, border-color .15s;
+}
+.btn-cancel:hover { background: #e2e8f0; border-color: #cbd5e1; color: #1e293b; }
+
+.btn-simpan {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: linear-gradient(135deg, #6366f1, #4f46e5);
+    border: none;
+    color: #fff;
+    padding: 8px 22px;
+    border-radius: 9px;
+    font-size: .85rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(99,102,241,.35);
+    transition: opacity .15s, box-shadow .15s;
+}
+.btn-simpan:hover { opacity: .92; box-shadow: 0 4px 16px rgba(99,102,241,.45); }
